@@ -1,0 +1,46 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+
+<meta charset="UTF-8">
+
+<div id="app">
+
+	    <h3>O país selecionado é o {{pais}}</h3>
+
+		<img v-bind:src="imagem">
+		<p></p>
+
+		<div>
+
+			<button v-on:click="mostrarPortugal">Portugal</button>
+			<button v-on:click="mostrarBrasil">Brasil</button>
+
+		</div>
+</div>
+
+<script>
+	
+	new Vue({
+
+		el: '#app',
+		data: {
+			pais: '',
+			imagem: ''
+		},
+
+		methods: {
+			mostrarPortugal (){
+				this.pais = 'Portugal'
+			    this.imagem = 'Portugal.png'
+
+			},
+
+			mostrarBrasil (){
+				this.pais = 'Brasil'
+			    this.imagem = 'Brasil.png'
+		
+		}
+
+		}
+	})
+
+</script>

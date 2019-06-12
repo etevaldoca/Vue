@@ -1,0 +1,38 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+
+<div id="app">
+<input v-model="novaFruta">
+<button v-on:click="inserirFrutas">inserir</button>
+
+<p>Lista de frutas:</p>
+
+<ul>
+
+	<li v-for="fruta in frutas">{{fruta}}</li>
+
+</ul>
+<p>Total: {{totalFruta}}</p>
+
+</div>
+
+<script>
+
+	new Vue({
+		el: '#app',
+		data: {
+			frutas:[],
+			novaFruta: '',
+			totalFruta: 0
+		},
+
+		methods: {
+			inserirFrutas(){
+				this.frutas.push(this.novaFruta)
+				this.novaFruta = ''
+				this.totalFruta = this.frutas.length
+			}
+
+		}
+	})
+
+</script>
