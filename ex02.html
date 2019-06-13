@@ -1,0 +1,31 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+<meta charset="utf-8">
+
+<div id="root">
+    <span v-html="valor"></span>
+    <button @click='t1'>Titulo 1</button>
+    <button @click='t3'>Titulo 3</button>
+    <button @click='t5'>Titulo 5</button>
+</div>
+<script>
+    new Vue({
+        el: '#root',
+        data: {
+            valor: "<h4>Titulo Vue novo</h4>"
+        },
+        methods: {
+            t1(){
+                this.valor="<h1>Titulo Vue novo</h1>"
+            },
+            t3(){
+                this.valor="<h3>Titulo Vue novo</h3>"
+            },
+            t5(){
+                this.valor="<h5>Titulo Vue novo</h5>"
+            }
+        }
+    })
+</script>
+
+
+
